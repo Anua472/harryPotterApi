@@ -2,7 +2,7 @@ name: Deploy Angular
 on:
   push:
     branches:
-     - main
+      - main
 permissions:
   contents: read
   pages: write
@@ -17,18 +17,17 @@ jobs:
         with:
           node-version: 24
       - run: npm ci
-      - run: npm run build -- --configuration production --base-href /harry-potter-angular/
+      - run: npm run build -- --configuration production --base-href /harryPotterApi/
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: dist/harry-potter-angular/browser
+          path: dist/harryPotterApi/browser
   deploy:
-      needs: build
-      runs-on: ubuntu-latest
-      environment:
-        name: github-pages
-      permissions:
-        pages: write
-        id-token: write
-      steps:
-        - uses: actions/deploy-pages@v5
-
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/deploy-pages@v5
