@@ -1,12 +1,20 @@
-import { Component, signal } from '@angular/core';
+
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Header } from "./layout/header/header";
+import { Vista } from "./feature/vistaComponent/vista";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, Header, Vista],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('harryPotterApi');
+  private title = signal('harryPotterApi');
+
+
+
+
+
 }

@@ -1,0 +1,17 @@
+@if (character){
+
+
+    <mat-card appearance="raised" class="h-full overflow-hidden">
+       <img src={{character.image}} alt={{character.name}} class=" h-80 overflow-hidden w-full">
+       <mat-card-content class="mt-2 ">
+            <h3 class="text-sm font-semibold uppercase">{{character.name}}</h3>
+            <p class="font-light">Actor: {{character.actor}}</p>
+            <p class="font-light">Casa: {{character.house}}</p>
+            <span class="badge" [class.alive]="character.alive">
+                Estado: {{ character.alive ? 'Vivo' : 'Fallecido' }}
+              </span>
+        </mat-card-content>
+    </mat-card>
+  }
+
+
